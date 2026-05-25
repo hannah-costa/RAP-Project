@@ -1,0 +1,16 @@
+projection implementation in class zbp_c_hmc_rap_brand unique;
+strict ( 2 );
+use draft;
+
+define behavior for ZC_HMC_RAP_BRAND alias ZrHmcRapBrand
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Activate;
+  use action Resume;
+  use action Discard;
+  use action Edit;
+  use action Prepare;
+}

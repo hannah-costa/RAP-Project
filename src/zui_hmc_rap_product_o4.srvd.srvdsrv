@@ -1,0 +1,4 @@
+@EndUserText.label: 'ServiceDefinition for ZC_HMC_RAP_PRODUCT'
+define service ZUI_HMC_RAP_PRODUCT_O4 {
+  expose ZC_HMC_RAP_PRODUCT;
+}

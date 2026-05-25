@@ -1,0 +1,83 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Product',
+                typeNamePlural: 'Products',
+                title: { type: #STANDARD, label: 'Product', value: 'ProductId' } }
+              }
+annotate entity ZC_HMC_RAP_PRODUCT with
+{
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+  position: 10
+  } ]
+  @UI.lineItem: [ {
+    position: 10
+  } ]
+  @UI.selectionField: [ {
+    position: 10
+  } ]
+  @EndUserText.label: 'Product Id'
+  ProductId;
+  @UI.identification: [ {
+  position: 20
+  } ]
+  @UI.lineItem: [ {
+    position: 20
+  } ]
+  @UI.selectionField: [ {
+    position: 20
+  } ]
+  @EndUserText.label: 'Brand Id'
+  BrandId;
+  @UI.identification: [ {
+  position: 30
+  } ]
+  @UI.lineItem: [ {
+    position: 30
+  } ]
+  @UI.selectionField: [ {
+    position: 30
+  } ]
+  @EndUserText.label: 'Brand Name'
+  BrandName;
+  @UI.identification: [ {
+  position: 40
+  } ]
+  @UI.lineItem: [ {
+    position: 40
+  } ]
+  @EndUserText.label: 'Product Description'
+  ProductDescription;
+  @UI.identification: [ {
+  position: 50
+  } ]
+  @UI.lineItem: [ {
+    position: 50
+  } ]
+  @EndUserText.label: 'Price'
+  Price;
+  @UI.identification: [ {
+  position: 60
+  } ]
+  @UI.lineItem: [ {
+    position: 60
+  } ]
+  @EndUserText.label: 'Available Quantity'
+  Quantity;
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LocalLastChangedBy;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  @UI.hidden: true
+  LastChangedAt;
+}

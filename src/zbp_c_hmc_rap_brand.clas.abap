@@ -1,0 +1,5 @@
+CLASS zbp_c_hmc_rap_brand DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zc_hmc_rap_brand.
+ENDCLASS.
+
+CLASS zbp_c_hmc_rap_brand IMPLEMENTATION.
+ENDCLASS.

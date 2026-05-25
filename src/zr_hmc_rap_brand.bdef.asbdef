@@ -1,0 +1,36 @@
+managed implementation in class zbp_r_hmc_rap_brand unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZR_HMC_RAP_BRAND alias ZrHmcRapBrand
+persistent table zhmc_rap_brand
+draft table zhmc_rap_brand_d
+lock master
+total etag LastChangedAt
+authorization master ( global )
+etag master LastChangedAt
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( numbering : managed, readonly ) BrandUUID;
+  field ( readonly ) BrandId;
+
+  field ( mandatory ) BrandName;
+
+  draft action Activate optimized;
+  draft action Resume;
+  draft action Discard;
+  draft action Edit;
+  draft determine action Prepare;
+
+  determination CalculateBrandId on save { create; }
+
+  mapping for zhmc_rap_brand
+    {
+      BrandUUID     = brand_uuid;
+      BrandId       = brand_id;
+      BrandName     = brand_name;
+      LastChangedAt = last_changed_at;
+    }
+}

@@ -1,0 +1,53 @@
+managed implementation in class zbp_r_hmc_rap_product unique;
+strict ( 2 );
+with draft;
+extensible;
+
+define behavior for ZR_HMC_RAP_PRODUCT alias ZrHmcRapProduct
+persistent table zhmc_rap_product
+extensible
+draft table zhmc_rap_prod_d
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( instance )
+{
+  create ( authorization : global );
+  update;
+  delete;
+
+  field ( readonly )
+  CreatedBy,
+  CreatedAt,
+  LocalLastChangedBy,
+  LocalLastChangedAt,
+  LastChangedAt;
+
+  field ( readonly ) ProductId, BrandName;
+
+  field ( mandatory )
+  BrandId;
+
+  draft action Activate optimized;
+  draft action Resume;
+  draft action Discard;
+  draft action Edit;
+  draft determine action Prepare;
+
+  mapping for zhmc_rap_product corresponding extensible
+    {
+      ProductId          = PRODUCT_ID;
+      BrandId            = BRAND_ID;
+      BrandName          = BRAND_NAME;
+      ProductDescription = PRODUCT_DESCRIPTION;
+      CurrencyCode       = CURRENCY;
+      Unit               = UNIT;
+      Price              = PRICE;
+      Quantity           = QUANTITY;
+      CreatedBy          = CREATED_BY;
+      CreatedAt          = CREATED_AT;
+      LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+      LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+      LastChangedAt      = LAST_CHANGED_AT;
+    }
+
+}
