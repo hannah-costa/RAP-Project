@@ -22,9 +22,12 @@ etag master LastChangedAt
   draft action Resume;
   draft action Discard;
   draft action Edit;
-  draft determine action Prepare;
+  draft determine action Prepare {
+//    validation (always) ValidateBrandName;
+  }
 
   determination CalculateBrandId on save { create; }
+  validation ValidateBrandName on save { field BrandName ; create; update; }
 
   mapping for zhmc_rap_brand
     {
